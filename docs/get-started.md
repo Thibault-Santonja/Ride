@@ -160,16 +160,40 @@ git commit -m "Initial commit, initialize PETAL app
 
 - Create an Elixir's app with the Phoenix - LiveView framework
 - Add basic dependencies (especially Ecto)
-- Create base documentation
 - Add a license
 - Create docker-compose for the database
-- Add Tailwind and DaisyUI to the project
+- Add Tailwind and next DaisyUI to the project
 - Initialize the front
+- Create a basic documentation
 "
 git branch -M main
 git remote add origin git@github.com:Thibault-Santonja/Ride.git
 git push -u origin main
 ```
+
+
+
+## Model
+Since we will use Postgresql here, you can take a look to (this documentation about Ecto and Postgres)[https://github.com/elixir-ecto/postgrex]
+
+To add a new model, please follow these steps
+- Create and migrate your database with `mix ecto.setup`
+- Create a *Users* controller, *User* model and *users* table with the following fields
+  - *username* as string
+  - *password* as string
+  - *admin* as boolean
+```
+mix phx.gen.html Users User users username:string password:string admin:boolean
+```
+- Add `/users` to the routes in `lib/basic_crud_web/router.ex` (I use Sublime Text so : `subl lib/basic_crud_web/router.ex`) :
+```exs
+scope "/", BasicCrudWeb do
+  ...
+  resources "/persons", PersonController
+end
+```
+- Migrate models `mix ecto.migrate`
+
 
 
 ---
