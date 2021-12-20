@@ -1,41 +1,43 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>Peace of mind from prototype to production</p>
-</section>
+<section class="grid grid-cols-1 gap-16">
+  <header class="text-center py-8">
+    <h1 class="text-primary uppercase text-4xl font-extralight"><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
+    <p class="font-thin">Peace of mind from prototype to production</p>
+  </header>
 
-<section class="row">
-  <article class="column">
-    <h2>Resources</h2>
-    <ul>
-      <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.6/CHANGELOG.md">v1.6 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://web.libera.chat/#elixir">#elixir on Libera Chat (IRC)</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-      </li>
-      <li>
-        <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
-      </li>
-      <li>
-        <a href="https://discord.gg/elixir">Elixir on Discord</a>
-      </li>
-    </ul>
-  </article>
+  <section class="grid grid-cols-2">
+    <article class="grow text-center border-r-2 border-primary">
+      <h2 class="text-primary text-2xl font-extralight underline underline-offset-2 pb-4">Resources</h2>
+      <ul>
+        <li>
+          <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
+        </li>
+        <li>
+          <a href="https://github.com/phoenixframework/phoenix">Source</a>
+        </li>
+        <li>
+          <a href="https://github.com/phoenixframework/phoenix/blob/v1.6/CHANGELOG.md">v1.6 Changelog</a>
+        </li>
+      </ul>
+    </article>
+    <article class="grow text-center">
+      <h2 class="text-primary text-2xl font-extralight underline underline-offset-2 pb-4">Help</h2>
+      <ul>
+        <li>
+          <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
+        </li>
+        <li>
+          <a href="https://web.libera.chat/#elixir">#elixir on Libera Chat (IRC)</a>
+        </li>
+        <li>
+          <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
+        </li>
+        <li>
+          <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
+        </li>
+        <li>
+          <a href="https://discord.gg/elixir">Elixir on Discord</a>
+        </li>
+      </ul>
+    </article>
+  </section>
 </section>
