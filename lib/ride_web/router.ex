@@ -18,6 +18,7 @@ defmodule RideWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/petal", PageController, :petal
   end
 
   # Other scopes may use custom stacks.
