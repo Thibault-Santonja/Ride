@@ -42,12 +42,61 @@
   </div>
 
 
+  <div class="text-center">
+    <h1 class="text-primary uppercase text-5xl font-extralight">Some AlpineJS tests</h1>
+    <div x-data="{ open: false }" class="relative text-left">
+        <button
+                @click="open = !open"
+                @keydown.escape.window="open = false"
+                @click.away="open = false"
+                class="flex items-center h-8 pl-3 pr-2 border border-black focus:outline-none">
+            <span class="text-sm leading-none">
+                Options
+            </span>
+            <svg class="w-4 h-4 mt-px ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+        </button>
+        <div
+                x-cloak
+                x-show="open"
+                x-transition:enter="transition ease-out duration-100"
+                x-transition:enter-start="transform opacity-0 scale-95"
+                x-transition:enter-end="transform opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-75"
+                x-transition:leave-start="transform opacity-100 scale-100"
+                x-transition:leave-end="transform opacity-0 scale-95"
+                class="absolute flex flex-col w-40 mt-1 border border-black shadow-xs">
+            <a class="flex items-center h-8 px-3 text-sm hover:bg-gray-200" href="#">Settings</a>
+            <a class="flex items-center h-8 px-3 text-sm hover:bg-gray-200" href="#">Support</a>
+            <a class="flex items-center h-8 px-3 text-sm hover:bg-gray-200" href="#">Sign Out</a>
+        </div>
+    </div>
+    <div
+      class="flex items-center justify-start"
+      x-data="{ toggle: '0' }">
+      <div
+        class="relative w-12 h-6 rounded-full transition duration-200 ease-linear"
+        :class="[toggle === '1' ? 'bg-green-400' : 'bg-gray-400']">
+
+        <label
+          for="toggle"
+          class="absolute left-0 w-6 h-6 mb-2 bg-white border-2 rounded-full cursor-pointer transition transform duration-100 ease-linear"
+          :class="[toggle === '1' ? 'translate-x-full border-green-400' : 'translate-x-0 border-gray-400']"></label>
+            <input type="hidden" name="toggle" value="off" />
+        <input type="checkbox" id="toggle" name="toggle" class="hidden" @click="toggle === '0' ? toggle = '1' : toggle = '0'">
+      </div>
+    </div>
+  </div>
+
 
   <header class="text-center pt-4">
     <h1 class="text-primary uppercase text-5xl font-extralight"><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
     <p>Peace of mind from prototype to production</p>
   </header>
 
+
+  <button phx-click="reserve" phx-page-loading>Reserve</button>
 
   <div class="shadow stats mx-16">
     <div class="stat">

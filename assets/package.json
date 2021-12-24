@@ -1,8 +1,14 @@
 {
-  "name": "Ride demo",
+  "name": "Ride",
   "version": "0.1.0",
   "description": "Quick demo project using Elixir's PETAL stack.",
-  "keywords": ["Elixir", "PETAL", "Phoenix", "LiveView", "Tailwind"],
+  "keywords": [
+    "Elixir",
+    "PETAL",
+    "Phoenix",
+    "LiveView",
+    "Tailwind"
+  ],
   "license": "GPL-3.0",
   "author": "Thibault Santonja <thibault.santonja@gmail.com> (https://portfolio-thibault-santonja.vercel.app/)",
   "config": {
@@ -12,6 +18,7 @@
     "deploy": "NODE_ENV=production tailwindcss --postcss --minify --input=css/app.css --output=../priv/static/assets/app.css"
   },
   "dependencies": {
+    "alpinejs": "^3.7.1",
     "autoprefixer": "^10.4.0",
     "daisyui": "^1.16.6",
     "postcss": "^8.4.5",

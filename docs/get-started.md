@@ -170,6 +170,32 @@ git branch -M main
 git remote add origin git@github.com:Thibault-Santonja/Ride.git
 git push -u origin main
 ```
+11. Install Alpine.JS
+  1. Install using Yarn
+  ```shell
+  cd assets && yarn add alpinejs
+  ```
+  2. In assets/js/app.js, import the lib
+  ```ts
+  import Alpine from "alpinejs"
+
+
+  window.Alpine = Alpine
+  Alpine.start()
+  
+  // Update to prevent Alpine to lose track on the elements its attached to,
+  // when LiveView updates the DOM
+  let liveSocket = new LiveSocket("/live", Socket, {
+    params: { _csrf_token: csrfToken },
+    dom: {
+      onBeforeElUpdated(from, to) {
+        if (from._x_dataStack) {
+          window.Alpine.clone(from, to)
+        }
+      },
+    },
+  })
+  ```
 
 
 
