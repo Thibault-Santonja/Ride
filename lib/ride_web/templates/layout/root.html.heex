@@ -40,7 +40,6 @@
             </a>
 
             <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-
               <%= link class: "group -m-3 p-3 flex items-center rounded-md text-base text-gray-100 hover:bg-primary", to: Routes.live_dashboard_path(@conn, :home) do %>
                 <svg class="flex-shrink-0 h-6 w-6 text-primary group-hover:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
