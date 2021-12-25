@@ -42,8 +42,18 @@
   </div>
 
 
-  <div class="text-center">
-    <h1 class="text-primary uppercase text-5xl font-extralight">Some AlpineJS tests</h1>
+
+  <div class="text-center grid grid-cols-3 gap-4 lg:px-24 place-items-center">
+    <h1 class="text-primary uppercase text-5xl font-extralight col-span-full">Some PETAL component tests tests</h1>
+    <.live_component module={HeroComponent} id="hero" content={@content} />
+  </div> 
+
+
+
+  <div class="text-center grid grid-cols-3 gap-4 lg:px-24 place-items-center">
+    <h1 class="text-primary uppercase text-5xl font-extralight col-span-full">Some AlpineJS tests</h1>
+
+
     <div x-data="{ open: false }" class="relative text-left">
         <button
                 @click="open = !open"
@@ -66,12 +76,16 @@
                 x-transition:leave="transition ease-in duration-75"
                 x-transition:leave-start="transform opacity-100 scale-100"
                 x-transition:leave-end="transform opacity-0 scale-95"
-                class="absolute flex flex-col w-40 mt-1 border border-black shadow-xs">
-            <a class="flex items-center h-8 px-3 text-sm hover:bg-gray-200" href="#">Settings</a>
-            <a class="flex items-center h-8 px-3 text-sm hover:bg-gray-200" href="#">Support</a>
-            <a class="flex items-center h-8 px-3 text-sm hover:bg-gray-200" href="#">Sign Out</a>
+                class="absolute flex flex-col w-40 mt-1 shadow-xs">
+            <a class="flex items-center h-8 px-3 text-sm hover:bg-base-200" href="#">Settings</a>
+            <a class="flex items-center h-8 px-3 text-sm hover:bg-base-200" href="#">Support</a>
+            <a class="flex items-center h-8 px-3 text-sm hover:bg-base-200" href="#">Sign Out</a>
         </div>
+
+        <button phx-click="reserve" phx-page-loading>Reserve</button>
     </div>
+
+
     <div
       class="flex items-center justify-start"
       x-data="{ toggle: '0' }">
@@ -87,6 +101,34 @@
         <input type="checkbox" id="toggle" name="toggle" class="hidden" @click="toggle === '0' ? toggle = '1' : toggle = '0'">
       </div>
     </div>
+
+
+    <div 
+      class="relative"
+      x-data="{open: false}"
+      @mouseover = "open = true"
+      @mouseover.away = "open = false"
+    >
+      <div class="flex items-center">
+        <div class="ml-3">
+          <p class="text-sm leading-5 font-medium group-hover:text-primary">
+            %= @current_user.name %>
+          </p>
+        </div>
+      </div>
+      <div 
+        class="origin-top-right absolute right-0 pt-2 w-48 rounded-md shadow-lg"
+        x-show.transition="open">
+        <div class="py-1 rounded-md bg-primary shadow-xs">
+          <a href="" class="block px-4 py-2 text-sm leading-5 hover:bg-primary-focus">
+            Profile
+          </a>
+          <a href="" class="block px-4 py-2 text-sm leading-5 hover:bg-primary-focus">
+            Signout
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 
 
@@ -95,8 +137,6 @@
     <p>Peace of mind from prototype to production</p>
   </header>
 
-
-  <button phx-click="reserve" phx-page-loading>Reserve</button>
 
   <div class="shadow stats mx-16">
     <div class="stat">
