@@ -45,7 +45,11 @@
 
   <div class="text-center grid grid-cols-3 gap-4 lg:px-24 place-items-center">
     <h1 class="text-primary uppercase text-5xl font-extralight col-span-full">Some PETAL component tests tests</h1>
-    <.live_component module={HeroComponent} id="hero" content={@content} />
+    <ul>
+      <%= for name <- ["Titi", "Lulu", "Hades"] do %>
+        <li><RideWeb.HeroComponent.render name={name} /></li>
+      <% end %>
+    </ul> 
   </div> 
 
 
