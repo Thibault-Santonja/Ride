@@ -50,6 +50,9 @@
         <li><RideWeb.HeroComponent.render name={name} /></li>
       <% end %>
     </ul> 
+    <div>
+      <%= live_render(@conn, RideWeb.CounterTemplate) %>
+    </div>
   </div> 
 
 
