@@ -12,7 +12,7 @@ config :ride,
 
 # Configures the endpoint
 config :ride, RideWeb.Endpoint,
-  url: [host: "localhost"],
+  url: [host: "0.0.0.0"],
   render_errors: [view: RideWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Ride.PubSub,
   live_view: [signing_salt: "qUrCulYI"]
